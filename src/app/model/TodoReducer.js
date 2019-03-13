@@ -5,12 +5,13 @@ const TodoReducer = (state = {todos: []}, action) => {
     switch (action.type) {
 
         case TodoConstants.ADD_TODO:
-            break
+            return state
         case TodoConstants.MARK_TODO:
-            break
+            return state
         case TodoConstants.DELETE_TODO:
-            break
-
+            return state
+        default:
+            return state
     }
 
 }

@@ -3,27 +3,23 @@
  * @type {{name: string}}
  */
 import {ReactRunfest} from 'ufp-core/lib/modules/ufp-react'
-import {ConfigRunfest} from 'ufp-core/lib/modules/config'
 import AppCreatorFunction from './view/AppCreatorFunction'
 import TodoReducer from './model/TodoReducer'
+import TodoConstants from './model/TodoConstants'
 
 const Runfest = {
-    name: '001-ufp-minimal-request-app',
-    description: 'Example Ufp Application, configures middleware and loads static .json file into configuration reducer',
+
+    name: 'ufp-todo-example-app',
+    description: 'Example Ufp Application, a in-memory todo application',
 
     onRegistered: ({UfpCore}) => {
+
         /**
-         * register our app specific react component to the ufp-react module
+         * register our own application runfest which handles all the view/actions for us
          */
-        ReactRunfest.register({
-            rootNode: document.getElementById('root'),
-            appCreatorFunction: AppCreatorFunction
-        })
-
         UfpCore.registerReducer({
-            id: config.REDUCER_NAME,
+            id: TodoConstants.REDUCER_NAME,
             reducer: TodoReducer
-
         })
 
         /**
@@ -32,9 +28,12 @@ const Runfest = {
         UfpCore.registerRunfest(ReactRunfest)
 
         /**
-         * for now we need ufpconfig to have at least one reducer in our state
+         * register our app specific react component to the ufp-react module
          */
-        UfpCore.registerRunfest(ConfigRunfest)
+        ReactRunfest.register({
+            rootNode: document.getElementById('root'),
+            appCreatorFunction: AppCreatorFunction
+        })
     }
 
 }
