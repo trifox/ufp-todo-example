@@ -5,6 +5,7 @@
 import {ReactRunfest} from 'ufp-core/lib/modules/ufp-react'
 import {ConfigRunfest} from 'ufp-core/lib/modules/config'
 import AppCreatorFunction from './view/AppCreatorFunction'
+import TodoReducer from './model/TodoReducer'
 
 const Runfest = {
     name: '001-ufp-minimal-request-app',
@@ -17,6 +18,12 @@ const Runfest = {
         ReactRunfest.register({
             rootNode: document.getElementById('root'),
             appCreatorFunction: AppCreatorFunction
+        })
+
+        UfpCore.registerReducer({
+            id: config.REDUCER_NAME,
+            reducer: TodoReducer
+
         })
 
         /**
