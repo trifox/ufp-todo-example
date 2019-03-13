@@ -9,7 +9,6 @@ import AppCreatorFunction from './view/AppCreatorFunction'
 const Runfest = {
     name: '001-ufp-minimal-request-app',
     description: 'Example Ufp Application, configures middleware and loads static .json file into configuration reducer',
-    actionCreators: ConfigActionCreators,
 
     onRegistered: ({UfpCore}) => {
         /**
