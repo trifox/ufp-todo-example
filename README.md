@@ -1,5 +1,11 @@
 # ufp-todo-example
 UFP Core Frontend todo example application
+This example demonstrates the worldview of ufp-core frontend, it demonstrates a redux-todo application modularized using ufp-core Runfest definition
+
+it renders 2 view of the same todos data source
+
+![alt text](./doc/screenshot.jpg "Logo Title Text 1")
+
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

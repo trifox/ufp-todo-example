@@ -1,4 +1,3 @@
-// Helper styles for demo
 import React from 'react'
 import PropTypes from 'prop-types'
 import HOCTodos from '../../HOCTodos'
