@@ -1,43 +1,36 @@
 // Helper styles for demo
 import React from 'react'
 import PropTypes from 'prop-types'
-import HOCTodoActions from '../HOCTodoActions'
-import Button from '@material-ui/core/Button'
-import Grid from '@material-ui/core/Grid'
+import HOCTodoActions from '../../HOCTodoActions'
 import Typography from '@material-ui/core/Typography'
 
 const Todo = ({todo, markTodo, deleteTodo}) => (
 
-    <Grid container
-          spacing={8} >
-        <Grid item
-              xs={8} >
+    <div >
+        <div >
             <Typography >{todo.task}</Typography >
-        </Grid >
-
-        <Grid item
-              xs={2} >
-            <Button variant="contained"
+        </div >
+        <span >
+            <button
                     color="primary"
                     type="button"
-                    fullWidth
+
                     className="outline"
                     onClick={() => deleteTodo({todo})} >
                 Delete
-            </Button >
-        </Grid >
-        <Grid item
-              xs={2} >
-            <Button variant="contained"
+            </button >
+        </span >
+        <span >
+            <button
                     color={todo.mark ? 'success' : 'primary'}
                     type="button"
-                    fullWidth
+
                     className="outline"
                     onClick={() => markTodo({todo})} >
                 {todo.mark ? 'finished' : 'finish'}
-            </Button >
-        </Grid >
-    </Grid >
+            </button >
+        </span >
+    </div >
 )
 Todo.propTypes = {
     markTodo: PropTypes.func.isRequired,

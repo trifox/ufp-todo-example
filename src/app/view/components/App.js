@@ -1,9 +1,11 @@
 import React from 'react'
-import TodoModule from '../../../todos/view/components/TodoModule'
+import TodoModule from '../../../todos/view/components/material_ui/TodoModule'
+import TodoModuleReact from '../../../todos/view/components/react_only/TodoModule'
 import withRoot from '../../../withRoot'
 
 const App = () => (
-    <TodoModule />
+    <TodoModule />,
+        <TodoModuleReact />
 )
 
 export default withRoot(App)
