@@ -14,6 +14,7 @@ import TodoSelectors from '../model/TodoSelectors'
 
 const mapStateToProps = (state) => ({
 
+    todosCount: TodoSelectors.todosCountSelector(state),
     todos: TodoSelectors.todosSelector(state)
 })
 
