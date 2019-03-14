@@ -1,13 +1,15 @@
 import {connect} from 'react-redux'
-// import {UfpFormattedMessage} from 'core/ufp/intl'
 import TodoActionCreators from '../controller/TodoActionCreators'
 
 /**
- * uTILITY wRAPPER CLASS, calling
+ * this higher order component is used to inject the todos action creators
+ * into the properties of an component to be used from there
  *
- * this connector resolves props.resourceId and props.resourceName to a data object
- * with method to work with the object
+ * usage:
  *
+ * import HOCTodoActions from '...HOCTodoActions'
+ * ... component definition ...
+ * export default HOCTodoActions(Component)
  */
 
 const mapStateToProps = (state) => ({

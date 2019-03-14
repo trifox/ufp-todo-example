@@ -1,6 +1,15 @@
 import update from 'react-addons-update'
 import TodoConstants from './TodoConstants'
 
+/**
+ * the reducer is the heart of a redux and so an ufp-module, for creating reducers exists
+ * manny flavours, in this example it is all kept in place and distinguished using the switch
+ * case common patterns and the ufp-core is to use an action-handler pattern defining the
+ * actions in a hash map with individual reduce functions
+ *
+ * TBD
+ */
+
 const TodoReducer = (state = {todos: []}, action) => {
     console.log('Todo Reducer', state, action)
     let todoIndexFunc = () => {

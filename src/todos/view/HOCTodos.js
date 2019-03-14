@@ -1,13 +1,15 @@
 import {connect} from 'react-redux'
-// import {UfpFormattedMessage} from 'core/ufp/intl'
 import TodoSelectors from '../model/TodoSelectors'
 
 /**
- * uTILITY wRAPPER CLASS, calling
+ * this higher order component is used to inject the todos result array
+ * into the properties of an component
  *
- * this connector resolves props.resourceId and props.resourceName to a data object
- * with method to work with the object
+ * usage:
  *
+ * import HOCTodos from '...HOCTodos'
+ * ... component definition ...
+ * export default HOCTodos(Component)
  */
 
 const mapStateToProps = (state) => ({
