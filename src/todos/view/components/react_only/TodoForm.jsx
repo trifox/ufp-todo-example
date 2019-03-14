@@ -55,7 +55,7 @@ const TodoForm = ({addTodo}) => (
 
                             <button color="primary"
                                     type="submit"
-                                    disabled={isSubmitting} >
+                                    disabled={!dirty ||isSubmitting} >
                                 Submit
                             </button >
                         </div >

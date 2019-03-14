@@ -6,6 +6,7 @@ import Todos from './Todos'
 import {withStyles} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
+import TodosDisplayTotalCount from './TodosDisplayTotalCount'
 
 const styles = theme => ({
     root: {
@@ -21,7 +22,9 @@ const TodoModule = ({classes}) => (
               xs={12} >
 
             <Typography variant="h3" >Ufp Example Todo Application</Typography >
+            <Typography   >This components use React-Material-UI for rendering</Typography >
 
+            <TodosDisplayTotalCount />
             <TodoForm />
         </Grid >
         <Grid item

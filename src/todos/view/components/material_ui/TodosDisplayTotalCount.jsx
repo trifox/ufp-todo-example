@@ -1,12 +1,13 @@
 // Helper styles for demo
 import React from 'react'
 import PropTypes from 'prop-types'
-import HOCTodos from '../HOCTodos'
+import HOCTodos from '../../HOCTodos'
+import Typography from '@material-ui/core/Typography'
 
 const TodosDisplayTotalCount = ({todos}) => {
-    return (<div >
+    return (<Typography >
             Total Todos: {(todos && todos.length) || 0}
-        </div >
+        </Typography >
     )
 }
 TodosDisplayTotalCount.propTypes = {

@@ -60,7 +60,7 @@ const TodoForm = ({addTodo}) => (
                             <Button variant="contained"
                                     color="primary"
                                     type="submit"
-                                    disabled={isSubmitting} >
+                                    disabled={!dirty || isSubmitting} >
                                 Submit
                             </Button >
                         </Grid >
