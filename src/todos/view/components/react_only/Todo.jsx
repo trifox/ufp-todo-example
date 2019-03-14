@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import HOCTodoActions from '../../HOCTodoActions'
-import Typography from '@material-ui/core/Typography'
 
 const Todo = ({todo, markTodo, deleteTodo}) => (
 
     <div >
         <div >
-            <Typography >{todo.task}</Typography >
+            <p >{todo.task}</p >
         </div >
         <span >
             <button
