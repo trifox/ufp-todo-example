@@ -7,23 +7,36 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 
 const Todo = ({todo, markTodo, deleteTodo}) => (
-    <Grid container >
-        <Typography>{todo.task}</Typography>
 
-        <Button variant="contained"
-                color="primary"
-                type="button"
-                className="outline"
-                onClick={() => deleteTodo({todo})} >
-            Delete
-        </Button >
-        <Button variant="contained"
-                color="primary"
-                type="button"
-                className="outline"
-                onClick={() => markTodo({todo})} >
-            Mark Finished
-        </Button >
+    <Grid container
+          spacing={8} >
+        <Grid item
+              xs={8} >
+            <Typography >{todo.task}</Typography >
+        </Grid >
+
+        <Grid item
+              xs={2} >
+            <Button variant="contained"
+                    color="primary"
+                    type="button"
+                    fullWidth
+                    className="outline"
+                    onClick={() => deleteTodo({todo})} >
+                Delete
+            </Button >
+        </Grid >
+        <Grid item
+              xs={2} >
+            <Button variant="contained"
+                    color={todo.mark ? 'success' : 'primary'}
+                    type="button"
+                    fullWidth
+                    className="outline"
+                    onClick={() => markTodo({todo})} >
+                {todo.mark ? 'finished' : 'finish'}
+            </Button >
+        </Grid >
     </Grid >
 )
 Todo.propTypes = {
