@@ -1,17 +1,18 @@
 // Helper styles for demo
-
+import Button from '@material-ui/core/Button'
 import React from 'react'
 import {Formik} from 'formik'
+import TextField from '@material-ui/core/TextField'
+import HOCTodoActions from '../HOCTodoActions'
 
-const TodoForm = () => (
+const TodoForm = ({addTodo}) => (
     <div >
-
-        <Formik initialValues={{todo: ''}}
+        <Formik initialValues={{task: ''}}
                 onSubmit={(values, {setSubmitting}) => {
-                    setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
-                        setSubmitting(false);
-                    }, 500);
+
+                        addTodo({todo: values})
+                        setSubmitting(false)
+
                 }} >
             {props => {
                 const {
@@ -24,35 +25,39 @@ const TodoForm = () => (
                     handleBlur,
                     handleSubmit,
                     handleReset,
-                } = props;
+                } = props
                 return (
                     <form onSubmit={handleSubmit} >
                         <label htmlFor="todo"
                                style={{display: 'block'}} >
                             Todo
                         </label >
-                        <input id="todo"
-                               placeholder="Enter a new Todo"
-                               type="text"
-                               value={values.todo}
-                               onChange={handleChange}
-                               onBlur={handleBlur}
-                               className={
-                                   errors.todo && touched.todo ? 'text-input error' : 'text-input'
-                               } />
-                        {errors.todo &&
-                        touched.todo && <div className="input-feedback" >{errors.todo}</div >}
+                        <TextField id="task"
+                                   placeholder="Enter a new Todo"
+                                   type="text"
+                                   value={values.task}
+                                   onChange={handleChange}
+                                   onBlur={handleBlur}
+                                   className={
+                                       errors.task && touched.task ? 'text-input error' : 'text-input'
+                                   } />
+                        {errors.task &&
+                        touched.task && <div className="input-feedback" >{errors.task}</div >}
 
-                        <button type="button"
+                        <Button variant="contained"
+                                color="primary"
+                                type="button"
                                 className="outline"
                                 onClick={handleReset}
                                 disabled={!dirty || isSubmitting} >
                             Reset
-                        </button >
-                        <button type="submit"
+                        </Button >
+                        <Button variant="contained"
+                                color="primary"
+                                type="submit"
                                 disabled={isSubmitting} >
                             Submit
-                        </button >
+                        </Button >
 
                     </form >
                 )
@@ -62,4 +67,4 @@ const TodoForm = () => (
     </div >
 )
 
-export default TodoForm
+export default HOCTodoActions(TodoForm)
