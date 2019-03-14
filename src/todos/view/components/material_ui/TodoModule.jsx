@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import TodosDisplayTotalCount from './TodosDisplayTotalCount'
 
+import withRoot from './withRoot'
 const styles = theme => ({
     root: {
         padding: theme.spacing.unit * 3
@@ -35,4 +36,4 @@ const TodoModule = ({classes}) => (
 
     </Grid >
 )
-export default withStyles(styles)(TodoModule)
+export default withRoot(withStyles(styles)(TodoModule))
