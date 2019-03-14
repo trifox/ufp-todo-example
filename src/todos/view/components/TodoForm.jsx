@@ -3,15 +3,16 @@ import Button from '@material-ui/core/Button'
 import React from 'react'
 import {Formik} from 'formik'
 import TextField from '@material-ui/core/TextField'
+import Grid from '@material-ui/core/Grid'
 import HOCTodoActions from '../HOCTodoActions'
 
 const TodoForm = ({addTodo}) => (
-    <div >
+    <Grid container >
         <Formik initialValues={{task: ''}}
                 onSubmit={(values, {setSubmitting}) => {
 
-                        addTodo({todo: values})
-                        setSubmitting(false)
+                    addTodo({todo: values})
+                    setSubmitting(false)
 
                 }} >
             {props => {
@@ -28,11 +29,9 @@ const TodoForm = ({addTodo}) => (
                 } = props
                 return (
                     <form onSubmit={handleSubmit} >
-                        <label htmlFor="todo"
-                               style={{display: 'block'}} >
-                            Todo
-                        </label >
+
                         <TextField id="task"
+                                   label="New Todo"
                                    placeholder="Enter a new Todo"
                                    type="text"
                                    value={values.task}
@@ -64,7 +63,7 @@ const TodoForm = ({addTodo}) => (
             }}
         </Formik >
 
-    </div >
+    </Grid >
 )
 
 export default HOCTodoActions(TodoForm)

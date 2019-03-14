@@ -3,10 +3,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import HOCTodoActions from '../HOCTodoActions'
 import Button from '@material-ui/core/Button'
+import Grid from '@material-ui/core/Grid'
+import Typography from '@material-ui/core/Typography'
 
 const Todo = ({todo, markTodo, deleteTodo}) => (
-    <div >
-        {todo.task}
+    <Grid container >
+        <Typography>{todo.task}</Typography>
 
         <Button variant="contained"
                 color="primary"
@@ -22,7 +24,7 @@ const Todo = ({todo, markTodo, deleteTodo}) => (
                 onClick={() => markTodo({todo})} >
             Mark Finished
         </Button >
-    </div >
+    </Grid >
 )
 Todo.propTypes = {
     markTodo: PropTypes.func.isRequired,

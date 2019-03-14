@@ -1,11 +1,11 @@
 /**
- * the manifest.js defines the properties of the ufp-module
- * @type {{name: string}}
+ * the runfest can be any module, hence our application brings in a runfest
+ * defining its react environment, and providing the root component and the
+ * html dom node id
  */
 import {ReactRunfest} from 'ufp-core/lib/modules/ufp-react'
 import AppCreatorFunction from './view/AppCreatorFunction'
-import TodoReducer from './model/TodoReducer'
-import TodoConstants from './model/TodoConstants'
+import TodosRunfest from '../todos/Runfest'
 
 const Runfest = {
 
@@ -17,15 +17,12 @@ const Runfest = {
         /**
          * register our own application runfest which handles all the view/actions for us
          */
-        UfpCore.registerReducer({
-            id: TodoConstants.REDUCER_NAME,
-            reducer: TodoReducer
-        })
 
         /**
          * register the ufp-react module to ufp-cre (declaring that we want to actually use it
          */
         UfpCore.registerRunfest(ReactRunfest)
+        UfpCore.registerRunfest(TodosRunfest)
 
         /**
          * register our app specific react component to the ufp-react module
