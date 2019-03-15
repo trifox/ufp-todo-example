@@ -11,7 +11,7 @@ import TodoConstants from '../model/TodoConstants'
  * @returns {*}
  */
 const todosAppSelector = (state) => (
-    state[TodoConstants.REDUCER_NAME]
+    state[TodoConstants.REDUCER_NAME]||{todos:[]}
 )
 
 /**

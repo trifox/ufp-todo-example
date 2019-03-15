@@ -11,7 +11,7 @@ const Todos = ({todos}) => {
     )
 }
 Todos.propTypes = {
-    todo: PropTypes.array.isRequired
+    todos: PropTypes.array.isRequired
 }
 
 export default HOCTodos(Todos)
